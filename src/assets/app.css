@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+   /* 设置 html 和 body 标签的属性 */
+  body,
+  html {
+    background-color: #d1ddd2;  /* 背景色 */
+    color: black;
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC,
+      Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC, WenQuanYi Micro Hei,
+      sans-serif, Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji,
+      Segoe UI Symbol, Android Emoji, EmojiSymbols;
+  }
+  /* 设置 el-card属性，el-card 本质是 div 的 class 属性 */
+  .el-card{
+      margin-bottom: 16px;  /*设置每个卡片之间的间距*/
+  }

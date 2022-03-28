@@ -8,7 +8,8 @@ import 'buefy/dist/buefy.css'
 // Element UI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
+// 引入全局样式设置
+import '@/assets/app.css'
 
 Vue.use(Buefy)
 Vue.use(ElementUI)
