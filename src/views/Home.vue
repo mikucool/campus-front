@@ -16,8 +16,8 @@
 
 <script>
 import {getBillboard} from '@/api/billboard'  // 公告栏组件
-import CardBar from '@/views/card/CardBar.vue'  // 侧边栏组件
-import PostList from '@/views/post/index.vue'   // 帖子列表组件
+import CardBar from '@/views/card/CardBar'  // 侧边栏组件
+import PostList from '@/views/post/index'   // 帖子列表组件
 
 export default {
   name: 'Home',

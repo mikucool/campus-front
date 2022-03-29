@@ -1,4 +1,4 @@
-import { login } from "@/api/auth/auth";
+import { login, getUserInfo } from "@/api/auth/auth";
 import { getToken, setToken, removeToken } from "@/utils/auth";
 
 const state = {
@@ -15,7 +15,7 @@ const mutations = {
 
 const actions = {
   // 用户登录
-  // 参数：{ commit } 想 mutations 提交设置请求
+  // 参数：{ commit } 向 mutations 提交设置请求
   // 参数： userInfo 是接收的参数
   login({ commit }, userInfo) {
     console.log(userInfo);
@@ -25,6 +25,24 @@ const actions = {
     return new Promise((resolve, reject) => {
         // 调用 登录方法，向服务器发送请求
       login({ username: name.trim(), password: pass, rememberMe: rememberMe })
+        .then((response) => {
+            // 收到回应登录成功，并进行处理
+          const { data } = response;
+          // 设置 token 到 state 中
+          commit("SET_TOKEN_STATE", data.token);
+          // 设置 token 到 Cookie 中保存
+          setToken(data.token);
+          resolve();
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  },
+  // 获取用户信息
+  getInfo({ commit, state}) {
+    return new Promise((resolve, reject) => {
+      getUserInfo()
         .then((response) => {
             // 收到回应登录成功，并进行处理
           const { data } = response;
