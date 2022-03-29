@@ -4,11 +4,13 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [
+  //主页
   {
     path: '/',
     name: 'home',
     component: () =>import('@/views/Home')
   },
+  // 注册
   {
     path: '/register',
     name: 'register',
@@ -16,6 +18,15 @@ const routes = [
     meta: {title: 'register'}
 
   },
+  // 登录
+  {
+    path: '/login',
+    name: 'login',
+    component: () =>import('@/views/auth/Login'),
+    meta: {title: 'login'}
+
+  },
+  // 404
   {
     path: '/404',
     name: '404',

@@ -3,15 +3,11 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+const store = new Vuex.Store({
+  // 定义模块，便于管理存储的数据
   modules: {
+    user
   }
 })
+
+export default store

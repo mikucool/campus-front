@@ -7,3 +7,11 @@ export function userRegister(userDTO) {
         data: userDTO
     })
 }
+
+export function login(data) {
+    return request({
+        url: '/campus/user/login',
+        method: 'post',
+        data
+    })
+}
