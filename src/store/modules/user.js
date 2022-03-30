@@ -1,4 +1,4 @@
-import { login, getUserInfo } from "@/api/auth/auth";
+import { login, getUserInfo, logout} from "@/api/auth/auth";
 import { getToken, setToken, removeToken } from "@/utils/auth";
 
 const state = {
@@ -10,7 +10,10 @@ const state = {
 const mutations = {
   SET_TOKEN_STATE: (state, token) => {
     state.token = token;
-  }
+  },
+  SET_USER_STATE: (state, user) => {
+    state.user = user;
+  },
 };
 
 const actions = {
@@ -56,6 +59,22 @@ const actions = {
           
           commit('SET_USER_STATE', data)
           resolve(data)
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  },
+  // 注销
+  logout({ commit, state }) {
+    return new Promise((resolve, reject) => {
+      logout()
+        .then((response) => {
+          console.log(response);
+          commit("SET_TOKEN_STATE", "");
+          commit("SET_USER_STATE", "");
+          removeToken();
+          resolve();
         })
         .catch((error) => {
           reject(error);

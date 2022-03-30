@@ -42,6 +42,12 @@ const routes = [
   
 ]
 
+// 重写 push 方法，捕捉异常
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err);
+};
+
 const router = new VueRouter({
   routes
 })

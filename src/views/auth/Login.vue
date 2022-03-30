@@ -95,15 +95,12 @@ export default {
                 duration: 2000,
           });
 
-          // 获取用户信息
-          this.$store.dispatch("user/getInfo");
-
               // 跳转到首页
-            setTimeout(() => {
+          setTimeout(() => {
                 this.loading = false;
                 this.$router.push({ path: this.redirect || "/" });
               }, 0.1 * 1000);
-            })
+          })
             .catch(() => {
               this.loading = false;
             });
