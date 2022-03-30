@@ -1,5 +1,7 @@
 import axios from 'axios'
 import { Message, MessageBox } from 'element-ui'    // 引入element ui弹出对话框的模块
+import store from '@/store'
+import { getToken } from '@/utils/auth'
 
 // 1.创建axios实例
 const service = axios.create({

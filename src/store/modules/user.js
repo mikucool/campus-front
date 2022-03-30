@@ -44,13 +44,18 @@ const actions = {
     return new Promise((resolve, reject) => {
       getUserInfo()
         .then((response) => {
-            // 收到回应登录成功，并进行处理
           const { data } = response;
-          // 设置 token 到 state 中
-          commit("SET_TOKEN_STATE", data.token);
-          // 设置 token 到 Cookie 中保存
-          setToken(data.token);
-          resolve();
+          console.log(data)
+          if(!data) {
+            commit('SET_TOKEN_STATE', '')
+            commit('SET_USER_STATE', '')
+            removeToken()
+            resolve()
+            reject('Verification failed, please Login again')
+          }
+          
+          commit('SET_USER_STATE', data)
+          resolve(data)
         })
         .catch((error) => {
           reject(error);

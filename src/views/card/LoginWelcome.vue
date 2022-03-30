@@ -8,8 +8,8 @@
     </div>
 
     <div v-else class="has-text-centered">
-      <b-button type="is-primary" tag="router-link" :to="{path:'/register'}" outlined>登录</b-button>
-      <b-button type="is-danger" tag="router-link" :to="{path:'/login'}" outlined class="ml-2">注册</b-button>
+      <b-button type="is-primary" tag="router-link" :to="{path:'/register'}" outlined>注册</b-button>
+      <b-button type="is-danger" tag="router-link" :to="{path:'/login'}" outlined class="ml-2">登录</b-button>
     </div>
   </el-card>
 </template>
