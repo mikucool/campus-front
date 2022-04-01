@@ -29,3 +29,13 @@ export function getTopic(id) {
     })
 }
 
+// 帖子详情中的推荐
+export function getRecommendTopics(id) {
+    return request({
+        url: '/post/recommend',
+        method: 'get',
+        params: {
+            topicId: id
+        }
+    })
+}

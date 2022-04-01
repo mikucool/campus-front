@@ -17,6 +17,9 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 
 // 国际化时间
 import 'dayjs/locale/zh-cn'
+
+import format from 'date-fns/format'
+
 const dayjs = require('dayjs')
 // 相对时间插件
 dayjs.extend(relativeTime)
@@ -25,6 +28,11 @@ dayjs.locale('zh-cn')
 dayjs().locale('zh-cn').format()
 
 Vue.prototype.dayjs =dayjs; // 全局可以使用 dayjs
+
+// 定义一个过滤器，名字叫date，把传入的日期对象格式化
+Vue.filter('date', (date) =>{
+  return format(new Date(date), 'yyyy-MM-dd')
+})
 
 Vue.use(Buefy)
 Vue.use(ElementUI)
