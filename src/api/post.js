@@ -17,3 +17,15 @@ export function post(topic) {
         data: topic
     })
 }
+
+// 帖子信息
+export function getTopic(id) {
+    return request({
+        url: '/post',
+        method: 'get',
+        params: {
+            id: id
+        }
+    })
+}
+

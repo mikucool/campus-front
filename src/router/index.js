@@ -34,6 +34,21 @@ const routes = [
     meta: {title: '发布', requireAuth: true}
 
   },
+    // 发帖
+  {
+    path: '/post/create',
+    name: 'post-create',
+    component: () =>import('@/views/post/Create'),
+    meta: {title: '发布', requireAuth: true}
+
+  },
+    // 帖子详情
+  {
+    path: '/post/:id', // 动态路由，id 可变
+    name: 'post-detail',
+    component: () =>import('@/views/post/Detail'),
+
+  },
   // 404
   {
     path: '/404',
