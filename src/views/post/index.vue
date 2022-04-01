@@ -169,7 +169,7 @@ export default {
   },
   methods: {
     init(tab) {
-      getList(this.page.current, thsi.page.size, tab).then((response) => {
+      getList(this.page.current, this.page.size, tab).then((response) => {
         const { data } = response;
         this.page.current = data.current
         this.page.total = data.size
