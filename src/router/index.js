@@ -58,6 +58,14 @@ const routes = [
     meta: {title: '主题列表'}
 
   },
+  // 检索
+  {
+    path: '/search',
+    name: 'search',
+    component: () =>import('@/views/Search'),
+    meta: {title: '检索'}
+
+  },
   // 404
   {
     path: '/404',
