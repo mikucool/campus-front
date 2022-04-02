@@ -139,7 +139,6 @@
         :limit.sync="page.size"
         @pagination="init"
         />
-      <div>body</div>
     </el-card>
   </div>
 </template>

@@ -50,6 +50,14 @@ const routes = [
     meta: {title: '编辑'}
 
   },
+  // 标签下的帖子
+  {
+    path: '/tag/:name',
+    name: 'tag',
+    component: () =>import('@/views/tag/Tag'),
+    meta: {title: '主题列表'}
+
+  },
   // 404
   {
     path: '/404',
