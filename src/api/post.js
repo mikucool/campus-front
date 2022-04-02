@@ -39,3 +39,22 @@ export function getRecommendTopics(id) {
         }
     })
 }
+
+// 编辑帖子
+export function update(topic) {
+    return request({
+        url: '/post/update',
+        method: 'post',
+        data: topic
+    })
+}
+
+// 删除帖子
+export function deleteTopic(id) {
+    return request({
+        // es6 使用反引号`
+        url: `/post/delete/${id}`,
+        method: 'delete'
+    })
+}
+

@@ -54,6 +54,7 @@ export default {
         postData['content'] = this.commentText
         postData['topic_id'] = this.slug
         await pushComment(postData)
+        // 通知父组件（评论组件），将帖子 id 发射过去，及时更新帖子的评论区
         this.$emit('loadComments', this.slug)
         this.$message.success('留言成功')
       } catch (e) {

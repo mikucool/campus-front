@@ -2,7 +2,7 @@
   <section class="box comments">
     <hr />
     <h3 class="title is-5">Comments</h3>
-    <!-- <lv-comments-form :slug="slug" v-if="token" @loadComments="fetchComments"/> -->
+    <lv-comments-form :slug="slug" v-if="token" @loadComments="fetchComments"/>
 
     <lv-comments-item
       v-for="comment in comments"
@@ -30,6 +30,7 @@ export default {
     }
   },
   props: {
+    // slug：帖子 id
     slug: {
       type: String,
       default: null
