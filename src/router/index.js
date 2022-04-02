@@ -66,6 +66,22 @@ const routes = [
     meta: {title: '检索'}
 
   },
+  // 用户主页
+  {
+    path: '/member/:username/home',
+    name: 'user',
+    component: () =>import('@/views/user/Profile'),
+    meta: {title: '用户主页'}
+
+  },
+  // 用户主页
+  {
+    path: '/member/:username/setting',
+    name: 'user',
+    component: () =>import('@/views/user/Setting'),
+    meta: {title: '设置'}
+
+  },
   // 404
   {
     path: '/404',
