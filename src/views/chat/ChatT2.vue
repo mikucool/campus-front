@@ -31,8 +31,7 @@ import {
   uploadFile,
 } from "@/api/message";
 import { getInfo } from "@/api/user";
-import {URL} from "@/common/const"
-
+import { URL } from "@/common/const";
 
 let socket;
 
@@ -85,8 +84,6 @@ export default {
     };
   },
 
-  
-
   created() {
     this.fetchInfo();
     listContact().then((res) => {
@@ -98,17 +95,16 @@ export default {
           dept: v.content,
         });
       });
-      this.currentUser = this.winBarConfig.list[0];
-      this.config.name = this.currentUser.name;
-      this.config.img = this.currentUser.img;
-
-      this.listMessage(this.currentUser.name);
-      // 由于 listContact() 方法发送了异步请求，如果在 listContact() 外调用 initSocket() 
+      if (this.winBarConfig.list.length > 0) {
+        this.currentUser = this.winBarConfig.list[0];
+        this.config.name = this.currentUser.name;
+        this.config.img = this.currentUser.img;
+        this.listMessage(this.currentUser.name);
+      }
+      // 由于 listContact() 方法发送了异步请求，如果在 listContact() 外调用 initSocket()
       // 会导致数据还没初始化完就执行 initSocket()
       this.initSocket();
     });
-    
-    
   },
   mount() {},
   methods: {
@@ -156,7 +152,9 @@ export default {
           FileExt == "bmp"
         ) {
           this.inputMsg =
-            "<img data-src='" + URL.BACKEND_URL + "static/message/" +
+            "<img data-src='" +
+            URL.BACKEND_URL +
+            "static/message/" +
             fileName +
             "'/>";
         } else if (FileExt == "mp3" || FileExt == "wma" || FileExt == "wav") {
@@ -213,7 +211,7 @@ export default {
     bindWinBar(play = {}) {
       const { type, data = { id: null, img: null, name: null, dept: null } } =
         play;
-      if(!(data.name == this.currentUser.name)) {
+      if (!(data.name == this.currentUser.name)) {
         this.currentUser = data;
         this.listMessage(this.currentUser.name);
       }
@@ -225,7 +223,7 @@ export default {
       }
     },
     rightClick(type) {
-      if(!(this.currentUser.name == type.value.name)){
+      if (!(this.currentUser.name == type.value.name)) {
         this.currentUser = type.value;
         this.listMessage(this.currentUser.name);
       }
@@ -234,8 +232,10 @@ export default {
 
     talkEvent(type, plyload) {
       // alert("talkEvent");
-      console.log('tools', type.data.name)
-      this.$router.push({ path: this.redirect || `/member/${type.data.name}/home` });
+      console.log("tools", type.data.name);
+      this.$router.push({
+        path: this.redirect || `/member/${type.data.name}/home`,
+      });
     },
 
     // 获取当前登录用户信息
@@ -272,15 +272,21 @@ export default {
           let data = JSON.parse(msg.data); // 对收到的json数据进行解析， 类似这样的： {"users": [{"username": "zhang"},{ "username": "admin"}]}
           if (data.users) {
             // 获取在线人员信息
-            console.log("获取在线人员" + _this.winBarConfig.list.length);
+            console.log("获取在线好友数" + _this.winBarConfig.list.length);
             _this.users = data.users.filter(
               (user) => user.username !== username
             ); // 获取当前连接的所有用户信息，并且排除自身，暂时不用，后期用于判断用户的在线状态
             // 获取在线用户的好友用户的交集
             const onlineUsers = [];
             for (let i = 0, len = _this.users.length; i < len; i++) {
-              for (let j = 0, length = _this.winBarConfig.list.length; j < length; j++) {
-                if (_this.users[i].username === _this.winBarConfig.list[j].name) {
+              for (
+                let j = 0, length = _this.winBarConfig.list.length;
+                j < length;
+                j++
+              ) {
+                if (
+                  _this.users[i].username === _this.winBarConfig.list[j].name
+                ) {
                   onlineUsers.push({
                     name: _this.winBarConfig.list[j].name,
                     img: _this.winBarConfig.list[j].img,
@@ -290,7 +296,6 @@ export default {
             }
             _this.rightConfig.list = onlineUsers;
             console.log(onlineUsers[0]);
-
           } else {
             // 如果服务器端发送过来的json数据 不包含 users 这个key，那么发送过来的就是聊天文本json数据
             //  // {"from": "zhang", "text": "hello"}

@@ -1,7 +1,7 @@
 <template>
   <el-card class="box-card" shadow="never">
     <div slot="header">
-      <span>失物招领</span>
+      <span>近期活动</span>
     </div>
     <div>
         <!-- 居左对齐 -->
@@ -10,7 +10,9 @@
       </div>
         <!-- 居右对齐，并且距离上面的内容由 5 个像素点的距离 -->
       <div class="has-text-right mt-5 block">
-        ——{{ item.poster }}
+        地点：{{ item.location }}
+        <br>
+        发布者：{{ item.poster }}
       </div>
     </div>
   </el-card>
@@ -25,7 +27,8 @@ export default {
     return {
       item: {
         content: '',
-        poster: ''
+        poster: '',
+        location: '',
       }
     }
   },

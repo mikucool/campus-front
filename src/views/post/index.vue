@@ -13,7 +13,7 @@
               <div class="media-left">
                 <figure class="image is-48x48">
                   <img
-                    src="https://cn.gravatar.com/avatar/${item.userId}?s=164&d=monsterid"
+                    :src= item.avatar
                     style="border-radius: 5px"
                   />
                 </figure>
@@ -42,7 +42,7 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path:'/member/${item.username/home}'}">
+                      <router-link class="level-item" :to="{path: `/member/${item.username}/home`}">
                         {{ item.alias }}
                       </router-link>
                       
@@ -73,15 +73,17 @@
               :key="index"
               class="media"
             >
+              <!-- 头像 -->
               <div class="media-left">
                 <figure class="image is-48x48">
                   <img
-                    src="https://cn.gravatar.com/avatar/${item.userId}?s=164&d=monsterid"
+                    :src= item.avatar
                     style="border-radius: 5px"
                   />
                 </figure>
               </div>
 
+              <!-- 文章部分 -->
               <div class="media-content">
                 <div class="">
                   <p>
@@ -105,7 +107,7 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path:'/member/${item.username/home}'}">
+                      <router-link class="level-item" :to="{path: `/member/${item.username}/home`}">
                         {{ item.alias }}
                       </router-link>
                       
@@ -139,7 +141,7 @@
               <div class="media-left">
                 <figure class="image is-48x48">
                   <img
-                    src="https://cn.gravatar.com/avatar/${item.userId}?s=164&d=monsterid"
+                    :src= item.avatar
                     style="border-radius: 5px"
                   />
                 </figure>
@@ -168,7 +170,7 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path:'/member/${item.username/home}'}">
+                      <router-link class="level-item" :to="{path: `/member/${item.username}/home}`}">
                         {{ item.alias }}
                       </router-link>
                       
@@ -202,7 +204,7 @@
               <div class="media-left">
                 <figure class="image is-48x48">
                   <img
-                    src="https://cn.gravatar.com/avatar/${item.userId}?s=164&d=monsterid"
+                    :src= item.avatar
                     style="border-radius: 5px"
                   />
                 </figure>
@@ -265,7 +267,7 @@
               <div class="media-left">
                 <figure class="image is-48x48">
                   <img
-                    src="https://cn.gravatar.com/avatar/${item.userId}?s=164&d=monsterid"
+                    :src= item.avatar
                     style="border-radius: 5px"
                   />
                 </figure>
@@ -318,7 +320,7 @@
             </article>
           </el-tab-pane>
 
-          <el-tab-pane label="问答" name="qa">
+          <el-tab-pane label="问答" name="question">
             <!-- 帖子列表信息 -->
             <article
               v-for="(item, index) in articleList"
@@ -397,7 +399,7 @@
 
 <script>
 import { getList } from "@/api/post";
-import Pagination from '@/components/Pagination/index.vue'
+import Pagination from '@/components/Pagination/index.vue'  //分页组件
 
 
 export default {
@@ -408,10 +410,10 @@ export default {
       activeName: "latest",
       articleList: [],
       page: {
-        current: 1,
-        size: 10,
-        total: 0,
-        tab: 'latest'
+        current: 1, // 当前页码
+        size: 10, // 每页帖子数量
+        total: 0, // 总页数，默认为零
+        tab: 'latest' // 当前页面类型
       }
     };
   },
@@ -429,6 +431,7 @@ export default {
     },
     // 切换帖子类型
     handleClick(tab) {
+      console.log(tab);
       this.init(tab.name);
     },
   },
