@@ -10,6 +10,8 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // 引入全局样式设置
 import '@/assets/app.css'
+import Chat from 'jwchat';
+
 // 引入许可验证
 import '@/permission'
 // 引入时间
@@ -27,13 +29,13 @@ dayjs.extend(relativeTime)
 dayjs.locale('zh-cn')
 dayjs().locale('zh-cn').format()
 
-Vue.prototype.dayjs =dayjs; // 全局可以使用 dayjs
+Vue.prototype.dayjs = dayjs; // 全局可以使用 dayjs
 
 // 定义一个过滤器，名字叫date，把传入的日期对象格式化
 Vue.filter('date', (date) =>{
   return format(new Date(date), 'yyyy-MM-dd')
 })
-
+Vue.use(Chat)
 Vue.use(Buefy)
 Vue.use(ElementUI)
 

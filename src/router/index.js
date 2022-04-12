@@ -69,17 +69,25 @@ const routes = [
   // 用户主页
   {
     path: '/member/:username/home',
-    name: 'user',
+    name: 'userHome',
     component: () =>import('@/views/user/Profile'),
     meta: {title: '用户主页'}
 
   },
-  // 用户主页
+  // 用户设置
   {
     path: '/member/:username/setting',
-    name: 'user',
+    name: 'userSetting',
     component: () =>import('@/views/user/Setting'),
     meta: {title: '设置'}
+
+  },
+  // 聊天
+  {
+    path: '/chat/:username',
+    name: 'chat',
+    component: () =>import('@/views/chat/ChatT2'),
+    meta: {title: 'Chat'}
 
   },
   // 404
@@ -94,6 +102,18 @@ const routes = [
     path: '*',
     redirect: '/404',
     hidden: true
+  },
+  //测试websocket
+  {
+    path: '/test-websocket',
+    name: 'test-websocket',
+    component: () =>import('@/views/test/Im')
+  },
+  //测试上传文件
+  {
+    path: '/test-upload',
+    name: 'test-upload',
+    component: () =>import('@/views/test/Upload')
   }
   
 ]

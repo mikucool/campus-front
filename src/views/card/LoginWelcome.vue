@@ -5,6 +5,7 @@
     </div>
     <div v-if="token != null && token !==''" class="has-text-centered">
       <b-button type="is-danger" tag="router-link" :to="{path:'/post/create'}" outlined>发帖</b-button>
+      <b-button type="is-primary" tag="router-link" :to="{path: `/chat/${user.username}`}" outlined class="ml-2">聊天</b-button>
     </div>
 
     <div v-else class="has-text-centered">
@@ -23,7 +24,7 @@ export default {
   computed: {
     // 获取状态数据
     ...mapGetters([
-      'token'
+      'token','user'
     ])
   }
    

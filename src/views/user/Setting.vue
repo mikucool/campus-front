@@ -92,6 +92,7 @@ export default {
   },
   methods: {
     fetchInfo() {
+      alert(this.$route.params.username);
       getInfo(this.$route.params.username).then(res => {
         console.log(res)
         const { data } = res
