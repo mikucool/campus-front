@@ -106,7 +106,6 @@ export default {
       this.initSocket();
     });
   },
-  mount() {},
   methods: {
     // 查询消息
     listMessage(friendName) {
@@ -178,12 +177,13 @@ export default {
           alert("格式不支持");
           return;
         }
+        // 上传文件到后端
+        // 前端向后端发送的文件需要以formData格式存储，文件需要通过append的方式将数据传给formData对象
         var param = new FormData();
         param.append("file", plyload[i]);
         console.log(param);
         this.file = param;
-        // 上传文件到后端
-        // 前端向后端发送的文件需要以formData格式存储，文件需要通过append的方式将数据传给formData对象
+        
       }
     },
     /**

@@ -26,7 +26,7 @@
             </el-tab-pane>
             <el-tab-pane label="头像" name="second">
               <figure class="image is-48x48">
-                <img :src="`https://cn.gravatar.com/avatar/${this.user.id}?s=164&d=monsterid`">
+                <img :src= user.avatar>
               </figure>
             </el-tab-pane>
             <el-tab-pane label="电子邮箱" name="third">

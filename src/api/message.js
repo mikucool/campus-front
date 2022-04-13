@@ -24,7 +24,7 @@ export function listMessage(friendName) {
     }))
 }
 
-// 上传文件
+// 聊天时上传文件
 export function uploadFile(file) {
   return request(({
     url: `/message/uploadFile`,

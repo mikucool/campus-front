@@ -12,10 +12,7 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img
-                    :src= item.avatar
-                    style="border-radius: 5px"
-                  />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
 
@@ -42,22 +39,34 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path: `/member/${item.username}/home`}">
+                      <router-link
+                        class="level-item"
+                        :to="{ path: `/member/${item.username}/home` }"
+                      >
                         {{ item.alias }}
                       </router-link>
-                      
+
                       <span class="mr-1">
-                        发布于：{{ dayjs(item.createTime).format("YYYY/MM/DD") }}
+                        发布于：{{
+                          dayjs(item.createTime).format("YYYY/MM/DD")
+                        }}
                       </span>
-                      
-                      <span v-for="(tag, index) in item.tags" :key="index" class="tag is-hidden-mobile is-success is-light mr-1">
-                        <router-link :to="{ name: 'tag', params: {name:tag.name}}">
-                          {{ '#' + tag.name }}
+
+                      <span
+                        v-for="(tag, index) in item.tags"
+                        :key="index"
+                        class="tag is-hidden-mobile is-success is-light mr-1"
+                      >
+                        <router-link
+                          :to="{ name: 'tag', params: { name: tag.name } }"
+                        >
+                          {{ "#" + tag.name }}
                         </router-link>
                       </span>
 
-                      <span class="is-hidden-mobile">浏览：{{ item.view }}</span>
-
+                      <span class="is-hidden-mobile"
+                        >浏览：{{ item.view }}</span
+                      >
                     </div>
                   </div>
                 </nav>
@@ -76,10 +85,7 @@
               <!-- 头像 -->
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img
-                    :src= item.avatar
-                    style="border-radius: 5px"
-                  />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
 
@@ -107,22 +113,34 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path: `/member/${item.username}/home`}">
+                      <router-link
+                        class="level-item"
+                        :to="{ path: `/member/${item.username}/home` }"
+                      >
                         {{ item.alias }}
                       </router-link>
-                      
+
                       <span class="mr-1">
-                        发布于：{{ dayjs(item.createTime).format("YYYY/MM/DD") }}
+                        发布于：{{
+                          dayjs(item.createTime).format("YYYY/MM/DD")
+                        }}
                       </span>
-                      
-                      <span v-for="(tag, index) in item.tags" :key="index" class="tag is-hidden-mobile is-success is-light mr-1">
-                        <router-link :to="{ name: 'tag', params: {name:tag.name}}">
-                          {{ '#' + tag.name }}
+
+                      <span
+                        v-for="(tag, index) in item.tags"
+                        :key="index"
+                        class="tag is-hidden-mobile is-success is-light mr-1"
+                      >
+                        <router-link
+                          :to="{ name: 'tag', params: { name: tag.name } }"
+                        >
+                          {{ "#" + tag.name }}
                         </router-link>
                       </span>
 
-                      <span class="is-hidden-mobile">浏览：{{ item.view }}</span>
-
+                      <span class="is-hidden-mobile"
+                        >浏览：{{ item.view }}</span
+                      >
                     </div>
                   </div>
                 </nav>
@@ -140,10 +158,7 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img
-                    :src= item.avatar
-                    style="border-radius: 5px"
-                  />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
 
@@ -170,22 +185,34 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path: `/member/${item.username}/home}`}">
+                      <router-link
+                        class="level-item"
+                        :to="{ path: `/member/${item.username}/home}` }"
+                      >
                         {{ item.alias }}
                       </router-link>
-                      
+
                       <span class="mr-1">
-                        发布于：{{ dayjs(item.createTime).format("YYYY/MM/DD") }}
+                        发布于：{{
+                          dayjs(item.createTime).format("YYYY/MM/DD")
+                        }}
                       </span>
-                      
-                      <span v-for="(tag, index) in item.tags" :key="index" class="tag is-hidden-mobile is-success is-light mr-1">
-                        <router-link :to="{ name: 'tag', params: {name:tag.name}}">
-                          {{ '#' + tag.name }}
+
+                      <span
+                        v-for="(tag, index) in item.tags"
+                        :key="index"
+                        class="tag is-hidden-mobile is-success is-light mr-1"
+                      >
+                        <router-link
+                          :to="{ name: 'tag', params: { name: tag.name } }"
+                        >
+                          {{ "#" + tag.name }}
                         </router-link>
                       </span>
 
-                      <span class="is-hidden-mobile">浏览：{{ item.view }}</span>
-
+                      <span class="is-hidden-mobile"
+                        >浏览：{{ item.view }}</span
+                      >
                     </div>
                   </div>
                 </nav>
@@ -203,10 +230,7 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img
-                    :src= item.avatar
-                    style="border-radius: 5px"
-                  />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
 
@@ -233,22 +257,34 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path:'/member/${item.username/home}'}">
+                      <router-link
+                        class="level-item"
+                        :to="{ path: '/member/${item.username/home}' }"
+                      >
                         {{ item.alias }}
                       </router-link>
-                      
+
                       <span class="mr-1">
-                        发布于：{{ dayjs(item.createTime).format("YYYY/MM/DD") }}
+                        发布于：{{
+                          dayjs(item.createTime).format("YYYY/MM/DD")
+                        }}
                       </span>
-                      
-                      <span v-for="(tag, index) in item.tags" :key="index" class="tag is-hidden-mobile is-success is-light mr-1">
-                        <router-link :to="{ name: 'tag', params: {name:tag.name}}">
-                          {{ '#' + tag.name }}
+
+                      <span
+                        v-for="(tag, index) in item.tags"
+                        :key="index"
+                        class="tag is-hidden-mobile is-success is-light mr-1"
+                      >
+                        <router-link
+                          :to="{ name: 'tag', params: { name: tag.name } }"
+                        >
+                          {{ "#" + tag.name }}
                         </router-link>
                       </span>
 
-                      <span class="is-hidden-mobile">浏览：{{ item.view }}</span>
-
+                      <span class="is-hidden-mobile"
+                        >浏览：{{ item.view }}</span
+                      >
                     </div>
                   </div>
                 </nav>
@@ -266,10 +302,7 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img
-                    :src= item.avatar
-                    style="border-radius: 5px"
-                  />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
 
@@ -296,22 +329,34 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path:'/member/${item.username/home}'}">
+                      <router-link
+                        class="level-item"
+                        :to="{ path: '/member/${item.username/home}' }"
+                      >
                         {{ item.alias }}
                       </router-link>
-                      
+
                       <span class="mr-1">
-                        发布于：{{ dayjs(item.createTime).format("YYYY/MM/DD") }}
+                        发布于：{{
+                          dayjs(item.createTime).format("YYYY/MM/DD")
+                        }}
                       </span>
-                      
-                      <span v-for="(tag, index) in item.tags" :key="index" class="tag is-hidden-mobile is-success is-light mr-1">
-                        <router-link :to="{ name: 'tag', params: {name:tag.name}}">
-                          {{ '#' + tag.name }}
+
+                      <span
+                        v-for="(tag, index) in item.tags"
+                        :key="index"
+                        class="tag is-hidden-mobile is-success is-light mr-1"
+                      >
+                        <router-link
+                          :to="{ name: 'tag', params: { name: tag.name } }"
+                        >
+                          {{ "#" + tag.name }}
                         </router-link>
                       </span>
 
-                      <span class="is-hidden-mobile">浏览：{{ item.view }}</span>
-
+                      <span class="is-hidden-mobile"
+                        >浏览：{{ item.view }}</span
+                      >
                     </div>
                   </div>
                 </nav>
@@ -329,10 +374,7 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img
-                    src="https://cn.gravatar.com/avatar/${item.userId}?s=164&d=monsterid"
-                    style="border-radius: 5px"
-                  />
+                  <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
 
@@ -359,22 +401,34 @@
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
                   <div class="level-left">
                     <div class="level-left">
-                      <router-link class="level-item" :to="{path:'/member/${item.username/home}'}">
+                      <router-link
+                        class="level-item"
+                        :to="{ path: '/member/${item.username/home}' }"
+                      >
                         {{ item.alias }}
                       </router-link>
-                      
+
                       <span class="mr-1">
-                        发布于：{{ dayjs(item.createTime).format("YYYY/MM/DD") }}
+                        发布于：{{
+                          dayjs(item.createTime).format("YYYY/MM/DD")
+                        }}
                       </span>
-                      
-                      <span v-for="(tag, index) in item.tags" :key="index" class="tag is-hidden-mobile is-success is-light mr-1">
-                        <router-link :to="{ name: 'tag', params: {name:tag.name}}">
-                          {{ '#' + tag.name }}
+
+                      <span
+                        v-for="(tag, index) in item.tags"
+                        :key="index"
+                        class="tag is-hidden-mobile is-success is-light mr-1"
+                      >
+                        <router-link
+                          :to="{ name: 'tag', params: { name: tag.name } }"
+                        >
+                          {{ "#" + tag.name }}
                         </router-link>
                       </span>
 
-                      <span class="is-hidden-mobile">浏览：{{ item.view }}</span>
-
+                      <span class="is-hidden-mobile"
+                        >浏览：{{ item.view }}</span
+                      >
                     </div>
                   </div>
                 </nav>
@@ -385,26 +439,27 @@
         </el-tabs>
       </div>
 
-      <!-- 分页 -->
-      <pagination 
+      
+    </el-card>
+    <!-- 分页 -->
+      <pagination
         v-show="page.total > 0"
+        class="mt-5"
         :total="page.total"
         :page.sync="page.current"
         :limit.sync="page.size"
         @pagination="init"
-        />
-    </el-card>
+      />
   </div>
 </template>
 
 <script>
 import { getList } from "@/api/post";
-import Pagination from '@/components/Pagination/index.vue'  //分页组件
-
+import Pagination from "@/components/Pagination/index.vue"; //分页组件
 
 export default {
   name: "TopicList",
-  components: {Pagination},
+  components: { Pagination },
   data() {
     return {
       activeName: "latest",
@@ -413,26 +468,30 @@ export default {
         current: 1, // 当前页码
         size: 10, // 每页帖子数量
         total: 0, // 总页数，默认为零
-        tab: 'latest' // 当前页面类型
-      }
+      },
+      tab: "latest", // 当前页面类型
     };
   },
   created() {
     this.init(this.tab);
   },
   methods: {
-    init(tab) {
-      getList(this.page.current, this.page.size, tab).then((response) => {
-        const { data } = response;
-        this.page.current = data.current
-        this.page.total = data.size
-        this.articleList = data.records;
-      });
+    init() {
+      getList(this.page.current, this.page.size, this.tab).then(
+        (response) => {
+          const { data } = response;
+          this.page.current = data.current;
+          this.page.total = data.total;
+          this.page.size = data.size;
+          this.articleList = data.records;
+        }
+      );
     },
     // 切换帖子类型
     handleClick(tab) {
       console.log(tab);
-      this.init(tab.name);
+      this.tab = tab.name;
+      this.init(this.tab);
     },
   },
 };

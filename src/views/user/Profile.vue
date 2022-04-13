@@ -88,7 +88,7 @@ export default {
   data() {
     return {
       topicUser: {},
-      topics: {},
+      topics: [],
       page: {
         current: 1,
         size: 5,
