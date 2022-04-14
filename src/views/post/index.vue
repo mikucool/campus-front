@@ -11,7 +11,7 @@
               class="media"
             >
               <div class="media-left">
-                <figure class="image is-48x48">
+                <figure class="image is-64x64">
                   <img :src="item.avatar" style="border-radius: 5px" />
                 </figure>
               </div>
@@ -439,9 +439,7 @@
         </el-tabs>
       </div>
 
-      
-    </el-card>
-    <!-- 分页 -->
+      <!-- 分页 -->
       <pagination
         v-show="page.total > 0"
         class="mt-5"
@@ -450,6 +448,8 @@
         :limit.sync="page.size"
         @pagination="init"
       />
+    </el-card>
+    
   </div>
 </template>
 

@@ -27,4 +27,16 @@ export function update(user) {
   })
 }
 
+// 头像
+export function updateAvatar(file) {
+  return request({
+    url: `/campus/user/updateAvatar`,
+    method: 'post',
+    data: file,
+    headers: {
+      "Content-Type":"multipart/form-data"
+    }
+  })
+}
+
 

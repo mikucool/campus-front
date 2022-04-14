@@ -46,7 +46,7 @@ import { post } from "@/api/post";
 import Vditor from "vditor";
 import "vditor/dist/index.css";
 import { mapGetters } from "vuex";
-import URL from "@/common/const"
+import {URL} from "@/common/const"
 
 export default {
   name: "TopicPost",
@@ -78,7 +78,7 @@ export default {
   mounted() {
     let _this = this;
     _this.contentEditor = new Vditor("vditor", {
-      height: 500,
+      height: 600,
       placeholder: "此处为话题内容……",
       theme: "classic",
       counter: {
@@ -109,7 +109,7 @@ export default {
       //这里写上传
       upload: {
         accept: "image/*",
-        url: "http://localhost:8081/post/fileUpload",
+        url: URL.BACKEND_URL + "post/fileUpload",
         filename(name) {
           return name
               .replace(/[^(a-zA-Z0-9\u4e00-\u9fa5\.)]/g, "")

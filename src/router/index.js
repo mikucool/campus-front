@@ -69,7 +69,7 @@ const routes = [
   // 用户主页
   {
     path: '/member/:username/home',
-    name: 'userHome',
+    name: 'user-home',
     component: () =>import('@/views/user/Profile'),
     meta: {title: '用户主页'}
 
@@ -81,6 +81,13 @@ const routes = [
     component: () =>import('@/views/user/Setting'),
     meta: {title: '设置'}
 
+  },
+  // 用户设置头像
+  {
+    path: '/member/:username/updateAvatar',
+    name: 'update-avatar',
+    component: () =>import('@/views/user/UpdateAvatar'),
+    meta: {title: '修改头像'}
   },
   // 聊天
   {
