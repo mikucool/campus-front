@@ -32,7 +32,7 @@
 import { updateAvatar } from "@/api/user";
 
 export default {
-  name: "Upload",
+  name: "UploadAvatar",
   data() {
     return {
       dialogOfUpload: true,

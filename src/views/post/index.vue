@@ -11,8 +11,9 @@
               class="media"
             >
               <div class="media-left">
-                <figure class="image is-64x64">
-                  <img :src="item.avatar" style="border-radius: 5px" />
+                <figure class="image is-48x48">
+                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
+                  <el-avatar :size="34" :src="item.avatar" />
                 </figure>
               </div>
 
@@ -85,7 +86,8 @@
               <!-- 头像 -->
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="item.avatar" style="border-radius: 5px" />
+                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
+                  <el-avatar :size="34" :src="item.avatar" />
                 </figure>
               </div>
 
@@ -158,7 +160,8 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="item.avatar" style="border-radius: 5px" />
+                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
+                  <el-avatar :size="34" :src="item.avatar" />
                 </figure>
               </div>
 
@@ -221,7 +224,7 @@
             </article>
           </el-tab-pane>
 
-          <el-tab-pane label="交易" name="trade">
+          <el-tab-pane label="市场" name="market">
             <!-- 帖子列表信息 -->
             <article
               v-for="(item, index) in articleList"
@@ -230,7 +233,8 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="item.avatar" style="border-radius: 5px" />
+                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
+                  <el-avatar :size="34" :src="item.avatar" />
                 </figure>
               </div>
 
@@ -293,7 +297,7 @@
             </article>
           </el-tab-pane>
 
-          <el-tab-pane label="求助" name="help">
+          <el-tab-pane label="社团" name="society">
             <!-- 帖子列表信息 -->
             <article
               v-for="(item, index) in articleList"
@@ -302,7 +306,8 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="item.avatar" style="border-radius: 5px" />
+                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
+                  <el-avatar :size="34" :src="item.avatar" />
                 </figure>
               </div>
 
@@ -374,7 +379,8 @@
             >
               <div class="media-left">
                 <figure class="image is-48x48">
-                  <img :src="item.avatar" style="border-radius: 5px" />
+                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
+                  <el-avatar :size="34" :src="item.avatar" />
                 </figure>
               </div>
 
@@ -490,8 +496,8 @@ export default {
     // 切换帖子类型
     handleClick(tab) {
       console.log(tab);
-      this.tab = tab.name;
-      this.init(this.tab);
+      this.tab = tab.label;
+      this.init(this.label);
     },
   },
 };

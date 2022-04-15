@@ -4,9 +4,9 @@
       <div class="column is-one-quarter">
         <el-card shadow="never">
           <div slot="header" class="has-text-centered">
-            <router-link :to="{ name: 'update-avatar', params: { username: this.$route.params.username } }">
-              <el-avatar :size="64" :src="topicUser.avatar" />
-            </router-link>
+            <el-avatar :size="64" :src="topicUser.avatar" />
+            <br>
+              <b-button label="更改头像" @click="dialogOfUpload = true"></b-button>
             <p class="mt-3">{{ topicUser.alias || topicUser.username }}</p>
           </div>
           <div>
@@ -88,6 +88,7 @@
             @pagination="fetchUserById"
           />
         </el-card>
+        <upload-avatar v-if="dialogOfUpload"></upload-avatar>
       </div>
     </div>
   </div>
@@ -98,12 +99,15 @@ import { getInfoByName } from "@/api/user";
 import pagination from "@/components/Pagination/index";
 import { mapGetters } from "vuex";
 import { deleteTopic } from "@/api/post";
+import UploadAvatar from "@/views/user/UpdateAvatar.vue"
+
 
 export default {
   name: "Profile",
-  components: { pagination },
+  components: { pagination, UploadAvatar },
   data() {
     return {
+      dialogOfUpload: false,
       topicUser: {},
       topics: [],
       page: {

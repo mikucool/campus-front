@@ -158,7 +158,9 @@ export default {
             "'/>";
         } else if (FileExt == "mp3" || FileExt == "wma" || FileExt == "wav") {
           this.inputMsg =
-            "<audio data-src='http://localhost:8081/static/message/" +
+            "<audio data-src='" +
+            URL.BACKEND_URL +
+            "static/message/" +
             fileName +
             "'/>";
         } else if (
@@ -170,7 +172,9 @@ export default {
           FileExt == "wmv"
         ) {
           this.inputMsg =
-            "<video data-src='http://localhost:8081/static/message/" +
+            "<video data-src='" +
+            URL.BACKEND_URL +
+            "static/message/" +
             fileName +
             "'/>";
         } else {
@@ -183,7 +187,6 @@ export default {
         param.append("file", plyload[i]);
         console.log(param);
         this.file = param;
-        
       }
     },
     /**
@@ -255,7 +258,7 @@ export default {
         console.log("您的浏览器不支持WebSocket");
       } else {
         console.log("您的浏览器支持WebSocket=>" + username);
-        let socketUrl = "ws://localhost:8081/server/" + username;
+        let socketUrl = URL.BACKEND_WS + "server/" + username;
         if (socket != null) {
           socket.close();
           socket = null;

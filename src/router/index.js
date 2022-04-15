@@ -77,7 +77,7 @@ const routes = [
   // 用户设置
   {
     path: '/member/:username/setting',
-    name: 'userSetting',
+    name: 'user-setting',
     component: () =>import('@/views/user/Setting'),
     meta: {title: '设置'}
 
