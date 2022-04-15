@@ -10,13 +10,11 @@
               :key="index"
               class="media"
             >
+              <!-- 头像 -->
               <div class="media-left">
-                <figure class="image is-48x48">
-                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
-                  <el-avatar :size="34" :src="item.avatar" />
-                </figure>
+                <el-avatar :size="34" :src="item.avatar" />
               </div>
-
+              <!-- 内容 -->
               <div class="media-content">
                 <div class="">
                   <p>
@@ -29,12 +27,28 @@
                       <router-link
                         :to="{ name: 'post-detail', params: { id: item.id } }"
                       >
-                        <span class="is-size-6">{{ item.title }}</span>
+                        <strong
+                          ><span class="is-size-6">{{
+                            item.title
+                          }}</span></strong
+                        >
                       </router-link>
                     </el-tooltip>
                   </p>
+                  <div class="column mt-2">
+                    <td v-for="(img, id) in topicKeyToImgs[index]" :key="id">
+                      <el-image
+                        class="mr-3"
+                        style="width: 200px; height: 150px"
+                        :src="img"
+                        :fit="fit"
+                        :preview-src-list="topicKeyToImgs[index]"
+                      ></el-image>
+                    </td>
+                  </div>
+
                   <p class="ellipsis is-ellipsis-3">
-                    {{ item.content }}
+                    <!-- {{ item.content }} -->
                   </p>
                 </div>
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
@@ -108,8 +122,19 @@
                       </router-link>
                     </el-tooltip>
                   </p>
+                  <div class="column mt-2">
+                    <td v-for="(img, id) in topicKeyToImgs[index]" :key="id">
+                      <el-image
+                        class="mr-3"
+                        style="width: 200px; height: 150px"
+                        :src="img"
+                        :fit="fit"
+                        :preview-src-list="topicKeyToImgs[index]"
+                      ></el-image>
+                    </td>
+                  </div>
                   <p class="ellipsis is-ellipsis-3">
-                    {{ item.content }}
+                    <!-- {{ item.content }} -->
                   </p>
                 </div>
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
@@ -181,8 +206,19 @@
                       </router-link>
                     </el-tooltip>
                   </p>
+                  <div class="column mt-2">
+                    <td v-for="(img, id) in topicKeyToImgs[index]" :key="id">
+                      <el-image
+                        class="mr-3"
+                        style="width: 200px; height: 150px"
+                        :src="img"
+                        :fit="fit"
+                        :preview-src-list="topicKeyToImgs[index]"
+                      ></el-image>
+                    </td>
+                  </div>
                   <p class="ellipsis is-ellipsis-3">
-                    {{ item.content }}
+                    <!-- {{ item.content }} -->
                   </p>
                 </div>
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
@@ -254,8 +290,19 @@
                       </router-link>
                     </el-tooltip>
                   </p>
+                  <div class="column mt-2">
+                    <td v-for="(img, id) in topicKeyToImgs[index]" :key="id">
+                      <el-image
+                        class="mr-3"
+                        style="width: 200px; height: 150px"
+                        :src="img"
+                        :fit="fit"
+                        :preview-src-list="topicKeyToImgs[index]"
+                      ></el-image>
+                    </td>
+                  </div>
                   <p class="ellipsis is-ellipsis-3">
-                    {{ item.content }}
+                    <!-- {{ item.content }} -->
                   </p>
                 </div>
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
@@ -327,8 +374,20 @@
                       </router-link>
                     </el-tooltip>
                   </p>
+                  
+                  <div class="column mt-2">
+                    <td v-for="(img, id) in topicKeyToImgs[index]" :key="id">
+                      <el-image
+                        class="mr-3"
+                        style="width: 200px; height: 150px"
+                        :src="img"
+                        :fit="fit"
+                        :preview-src-list="topicKeyToImgs[index]"
+                      ></el-image>
+                    </td>
+                  </div>
                   <p class="ellipsis is-ellipsis-3">
-                    {{ item.content }}
+                    <!-- {{ item.content }} -->
                   </p>
                 </div>
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
@@ -370,7 +429,7 @@
             </article>
           </el-tab-pane>
 
-          <el-tab-pane label="问答" name="question">
+          <el-tab-pane label="学习" name="study">
             <!-- 帖子列表信息 -->
             <article
               v-for="(item, index) in articleList"
@@ -400,8 +459,19 @@
                       </router-link>
                     </el-tooltip>
                   </p>
+                  <div class="column mt-2">
+                    <td v-for="(img, id) in topicKeyToImgs[index]" :key="id">
+                      <el-image
+                        class="mr-3"
+                        style="width: 200px; height: 150px"
+                        :src="img"
+                        :fit="fit"
+                        :preview-src-list="topicKeyToImgs[index]"
+                      ></el-image>
+                    </td>
+                  </div>
                   <p class="ellipsis is-ellipsis-3">
-                    {{ item.content }}
+                    <!-- {{ item.content }} -->
                   </p>
                 </div>
                 <nav class="level has-text-grey is-mobile is-size-7 mt-2">
@@ -455,7 +525,6 @@
         @pagination="init"
       />
     </el-card>
-    
   </div>
 </template>
 
@@ -468,6 +537,10 @@ export default {
   components: { Pagination },
   data() {
     return {
+      fit: 'cover',
+      topicKeyToImgs: [],
+      imgs: [],
+      flag: false,
       activeName: "latest",
       articleList: [],
       page: {
@@ -478,26 +551,48 @@ export default {
       tab: "latest", // 当前页面类型
     };
   },
+
   created() {
     this.init(this.tab);
   },
+
   methods: {
     init() {
-      getList(this.page.current, this.page.size, this.tab).then(
-        (response) => {
-          const { data } = response;
-          this.page.current = data.current;
-          this.page.total = data.total;
-          this.page.size = data.size;
-          this.articleList = data.records;
-        }
-      );
+      getList(this.page.current, this.page.size, this.tab).then((response) => {
+        const { data } = response;
+        this.page.current = data.current;
+        this.page.total = data.total;
+        this.page.size = data.size;
+        this.articleList = data.records;
+        this.getImg();
+      });
     },
     // 切换帖子类型
     handleClick(tab) {
       console.log(tab);
       this.tab = tab.label;
       this.init(this.label);
+    },
+
+    getImg() {
+      this.topicKeyToImgs = [];
+      console.log(this.articleList);
+      for (let i = 0; i < this.articleList.length; i++) {
+        let str = this.articleList[i].content;
+        const pattern = /!\[(.*?)\]\((.*?)\)/gm;
+        let matcher;
+        let loop = 0;
+        while ((matcher = pattern.exec(str)) !== null && loop < 3) {
+          this.imgs.push(matcher[2]);
+          loop++;
+        }
+
+        this.topicKeyToImgs.push(this.imgs);
+
+        this.imgs = [];
+      }
+
+      console.log(this.topicKeyToImgs);
     },
   },
 };

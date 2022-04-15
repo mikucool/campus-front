@@ -129,6 +129,7 @@ export default {
         this.topicUser = data.user
         // this.comments = data.comments
         // markdown 解析响应的内容
+        console.log(this.topic.content)
         this.renderMarkdown(this.topic.content)
         this.flag = true
       })
