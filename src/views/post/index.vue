@@ -479,7 +479,7 @@
                     <div class="level-left">
                       <router-link
                         class="level-item"
-                        :to="{ path: '/member/${item.username/home}' }"
+                        :to="{ path: `/member/${item.username}/home` }"
                       >
                         {{ item.alias }}
                       </router-link>
@@ -576,7 +576,6 @@ export default {
 
     getImg() {
       this.topicKeyToImgs = [];
-      console.log(this.articleList);
       for (let i = 0; i < this.articleList.length; i++) {
         let str = this.articleList[i].content;
         const pattern = /!\[(.*?)\]\((.*?)\)/gm;
@@ -592,7 +591,6 @@ export default {
         this.imgs = [];
       }
 
-      console.log(this.topicKeyToImgs);
     },
   },
 };

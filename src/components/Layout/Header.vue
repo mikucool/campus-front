@@ -29,7 +29,7 @@
               v-model="searchKey"
               class="s_input"
               width="80%"
-              placeholder="搜索帖子、标签和用户"
+              placeholder="搜索帖子"
               rounded
               clearable
               @keyup.enter.native="search()"
@@ -74,6 +74,13 @@
             :to="{ path: `/member/${user.username}/home` }"
           >
             <i class="el-icon-user">个人中心</i>
+          </b-navbar-item>
+          <hr class="dropdown-divider" />
+          <b-navbar-item
+            tag="router-link"
+            :to="{ path: `/chat/${user.username}` }"
+          >
+            <i class="el-icon-s-promotion">聊天</i>
           </b-navbar-item>
           <hr class="dropdown-divider" />
           <b-navbar-item

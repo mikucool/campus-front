@@ -28,6 +28,13 @@ export function getTopic(id) {
         }
     })
 }
+//获取加精帖子
+export function getEssenceTopic() {
+    return request({
+        url: '/post/getEssenceTopic',
+        method: 'get',
+    })
+}
 
 // 帖子详情中的推荐
 export function getRecommendTopics(id) {

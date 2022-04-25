@@ -6,7 +6,7 @@
           <div slot="header" class="has-text-centered">
             <el-avatar :size="64" :src="topicUser.avatar" />
             <br>
-              <b-button label="更改头像" @click="dialogOfUpload = true"></b-button>
+              <b-button v-if="topicUser.username === user.username" label="更改头像" @click="dialogOfUpload = true"></b-button>
             <p class="mt-3">{{ topicUser.alias || topicUser.username }}</p>
           </div>
           <div>
