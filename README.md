@@ -32,17 +32,17 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - **主页**
 
-![main](https://github.com/mikucool/campus-front/master/ScreenShots/main.png)
+![main](https://github.com/mikucool/campus-front/tree/master/ScreenShots/main.png)
 
 - **帖子**
 
-![topic](https://github.com/mikucool/campus-front/master/ScreenShots/topic.png)
+![topic](https://github.com/mikucool/campus-front/tree/master/ScreenShots/topic.png)
 
 - **用户中心**
 
-![profile](https://github.com/mikucool/campus-front/master/ScreenShots/profile.png)
+![profile](https://github.com/mikucool/campus-front/tree/master/ScreenShots/profile.png)
 
 - **实时通信**
 
-![communication](https://github.com/mikucool/campus-front/master/ScreenShots/communication.png)
+![communication](https://github.com/mikucool/campus-front/tree/master/ScreenShots/communication.png)
 
