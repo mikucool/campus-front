@@ -65,12 +65,12 @@
                     <router-link
                       :to="{ name: 'topic-edit', params: { id: item.id } }"
                     >
-                      <span class="tag is-warning">编辑</span>
+                      <el-button type="primary" icon="el-icon-edit" circle></el-button>
                     </router-link>
                   </div>
                   <div class="level-item">
                     <a @click="handleDelete(item.id)">
-                      <span class="tag is-danger">删除</span>
+                      <el-button type="danger" icon="el-icon-delete" circle></el-button>
                     </a>
                   </div>
                 </div>

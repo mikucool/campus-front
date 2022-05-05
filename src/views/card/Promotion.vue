@@ -1,7 +1,7 @@
 <template>
   <el-card class="box-card" shadow="never">
     <div slot="header">
-      <span>🥂 推广</span>
+      <i class="el-icon-position">导航</i>
     </div>
     <div>
       <p v-for="(item, index) in list" :key="index" class="block">

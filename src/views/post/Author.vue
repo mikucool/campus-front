@@ -2,7 +2,7 @@
   <section id="author">
     <el-card class="" shadow="never">
       <div slot="header">
-        <span class="has-text-weight-bold">👨‍💻 关于作者</span>
+        <span class="has-text-weight-bold">作者</span>
       </div>
       <div class="has-text-centered">
         <p class="is-size-5 mb-5">
