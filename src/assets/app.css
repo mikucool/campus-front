@@ -17,10 +17,10 @@ html {
 }
 
 /*背景图*/
-body {
+/* body {
    background-image: url('https://api.mz-moe.cn/img.php');
-   /* background-repeat: round; */
-}
+   background-repeat: round;
+} */
 
 @media (min-width: 768px) {
   .container {

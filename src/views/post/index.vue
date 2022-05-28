@@ -11,8 +11,12 @@
               class="media"
             >
               <!-- 头像 -->
+
               <div class="media-left">
-                <el-avatar :size="34" :src="item.avatar" />
+                <figure class="image is-48x48">
+                  <!-- <img :src="item.avatar" style="border-radius: 5px" /> -->
+                  <el-avatar :size="34" :src="item.avatar" />
+                </figure>
               </div>
               <!-- 内容 -->
               <div class="media-content">
@@ -118,7 +122,11 @@
                       <router-link
                         :to="{ name: 'post-detail', params: { id: item.id } }"
                       >
-                        <span class="is-size-6">{{ item.title }}</span>
+                        <strong
+                          ><span class="is-size-6">{{
+                            item.title
+                          }}</span></strong
+                        >
                       </router-link>
                     </el-tooltip>
                   </p>
@@ -202,7 +210,11 @@
                       <router-link
                         :to="{ name: 'post-detail', params: { id: item.id } }"
                       >
-                        <span class="is-size-6">{{ item.title }}</span>
+                        <strong
+                          ><span class="is-size-6">{{
+                            item.title
+                          }}</span></strong
+                        >
                       </router-link>
                     </el-tooltip>
                   </p>
@@ -286,7 +298,11 @@
                       <router-link
                         :to="{ name: 'post-detail', params: { id: item.id } }"
                       >
-                        <span class="is-size-6">{{ item.title }}</span>
+                        <strong
+                          ><span class="is-size-6">{{
+                            item.title
+                          }}</span></strong
+                        >
                       </router-link>
                     </el-tooltip>
                   </p>
@@ -370,11 +386,15 @@
                       <router-link
                         :to="{ name: 'post-detail', params: { id: item.id } }"
                       >
-                        <span class="is-size-6">{{ item.title }}</span>
+                        <strong
+                          ><span class="is-size-6">{{
+                            item.title
+                          }}</span></strong
+                        >
                       </router-link>
                     </el-tooltip>
                   </p>
-                  
+
                   <div class="column mt-2">
                     <td v-for="(img, id) in topicKeyToImgs[index]" :key="id">
                       <el-image
@@ -455,7 +475,11 @@
                       <router-link
                         :to="{ name: 'post-detail', params: { id: item.id } }"
                       >
-                        <span class="is-size-6">{{ item.title }}</span>
+                        <strong
+                          ><span class="is-size-6">{{
+                            item.title
+                          }}</span></strong
+                        >
                       </router-link>
                     </el-tooltip>
                   </p>
@@ -537,7 +561,7 @@ export default {
   components: { Pagination },
   data() {
     return {
-      fit: 'cover',
+      fit: "cover",
       topicKeyToImgs: [],
       imgs: [],
       flag: false,
@@ -546,7 +570,7 @@ export default {
       page: {
         current: 1, // 当前页码
         size: 10, // 每页帖子数量
-        total: 0, // 总页数，默认为零
+        total: 0, // 总记录数，默认为零
       },
       tab: "latest", // 当前页面类型
     };
@@ -590,7 +614,6 @@ export default {
 
         this.imgs = [];
       }
-
     },
   },
 };
